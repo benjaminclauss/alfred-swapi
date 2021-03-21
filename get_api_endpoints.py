@@ -13,8 +13,8 @@ def main(wf):
 	
 	# Loop through the returned endpoint and add an item for each to the list of results for Alfred.
 	for endpoint in result:
-		subtitle = "Get " + endpoint + "data"
-		wf.add_item(title=endpoint, subtitle=subtitle, arg=endpoint, valid=True)
+		subtitle = "Get " + endpoint + " data"
+		wf.add_item(title=endpoint.capitalize(), subtitle=subtitle, arg=endpoint, valid=True)
 	
 	wf.send_feedback()
 
