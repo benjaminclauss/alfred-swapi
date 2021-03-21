@@ -12,9 +12,9 @@ def main(wf):
 	result = r.json()
 	
 	# Loop through the returned endpoint and add an item for each to the list of results for Alfred.
-	for endpoint in result:
-		subtitle = "Get " + endpoint + " data"
-		wf.add_item(title=endpoint.capitalize(), subtitle=subtitle, arg=endpoint, valid=True)
+	for dataType, endpoint in result.items():
+		subtitle = "Look up " + dataType + " data"
+		wf.add_item(title=dataType.capitalize(), subtitle=subtitle, arg=endpoint, valid=True)
 	
 	wf.send_feedback()
 
